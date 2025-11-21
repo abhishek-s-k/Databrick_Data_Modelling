@@ -1,2 +1,33 @@
 # Databricks notebook source
-print('hello databricks!')
+# MAGIC %sql
+# MAGIC
+# MAGIC CREATE TABLE IF NOT EXISTS datamodelling.default.source_data (
+# MAGIC   order_id INT PRIMARY KEY,
+# MAGIC   order_date DATE,
+# MAGIC   customer_id INT,
+# MAGIC   customer_name VARCHAR(100),
+# MAGIC   customer_email VARCHAR(100),
+# MAGIC   product_id INT,
+# MAGIC   product_name VARCHAR(100),
+# MAGIC   product_category VARCHAR(50),
+# MAGIC   quantity INT,
+# MAGIC   unit_price DECIMAL(10, 2),
+# MAGIC   payment_type VARCHAR(50),
+# MAGIC   country VARCHAR(50),
+# MAGIC   last_updated DATE
+# MAGIC )
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC
+# MAGIC INSERT INTO datamodelling.default.source_data VALUES 
+# MAGIC (1001, '2024-07-01', 1, 'Alice Johnson', 'alice@gmail.com', 501, 'iPhone 14', 'Electronics', 1, 999.99, 'Credit Card', 'USA', '2024-07-01'),
+# MAGIC (1002, '2024-07-01', 2, 'Bob Smith', 'bob@yahoo.com', 502, 'AirPods Pro', 'Electronics', 2, 199.99, 'PayPal', 'USA', '2024-07-01'),
+# MAGIC (1003, '2024-07-01', 3, 'Charlie Brown', 'charlie@outlook.com', 503, 'Nike Shoes', 'Footwear', 1, 129.99, 'Credit Card', 'Canada', '2024-07-01');
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC
+# MAGIC SELECT * FROM datamodelling.default.source_data
