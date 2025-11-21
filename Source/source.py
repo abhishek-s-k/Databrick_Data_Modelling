@@ -31,3 +31,12 @@
 # MAGIC %sql
 # MAGIC
 # MAGIC SELECT * FROM datamodelling.default.source_data
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC -- Incremental Load
+# MAGIC INSERT INTO datamodelling.default.source_data VALUES 
+# MAGIC (1004, '2024-07-02', 4, 'David Lee', 'david@abc.com', 504, 'Samsung S23', 'Electronics', 1, 899.99, 'Credit Card', 'USA', '2024-07-02'),
+# MAGIC (1005, '2024-07-02', 1, 'Alice Johnson', 'alice@gmail.com', 503, 'Nike Shoes', 'Footwear', 2, 129.99, 'Credit Card', 'USA', '2024-07-02');
+# MAGIC
