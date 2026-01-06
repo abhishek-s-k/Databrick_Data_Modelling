@@ -7,18 +7,6 @@ FROM datamodelling.bronze.bronze_table""").createOrReplaceTempView('silver_sourc
 
 # COMMAND ----------
 
-if spark.catalog.tableExists('datamodelling.silver.silver_table'):
-    pass
-    
-else:
-    spark.sql("""
-        CREATE TABLE IF NOT EXISTS datamodelling.silver.silver_table
-        AS
-        SELECT * FROM silver_source"""
-    )
-
-# COMMAND ----------
-
 # MAGIC %sql
 # MAGIC CREATE TABLE IF NOT EXISTS datamodelling.silver.silver_table
 # MAGIC AS
